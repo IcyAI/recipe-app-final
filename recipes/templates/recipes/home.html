@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html>
-   <title>
-       Recipes Home
-   </title>
-   <body>
-       Welcome to my recipe app
-   </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Recipe App</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Find Recipes</a>
+                <a href="#">Create Recipe</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="intro">
+            <p>Welcome! You can find, create, and save recipes you love.</p>
+            <img src="{% static 'recipes/images/home-picture.jpg' %}" alt="home" width="600" height="300">
+        </div>
+    </main>
+</body>
 </html>

@@ -64,3 +64,9 @@ class MyTestClass(TestCase):
 
            # Compare the value to the expected result i.e. 120
            self.assertEqual(max_length, 255)
+    
+    def test_get_absolute_url(self):
+       test = recipe.objects.get(id=1)
+       #get_absolute_url() should take you to the detail page of recipe #1
+       #and load the URL /books/list/1
+       self.assertEqual(test.get_absolute_url(), '/list/1')
