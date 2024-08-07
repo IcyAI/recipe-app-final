@@ -10,7 +10,14 @@
 
 <body>
 
-<h1>Recipe List</h1>                                {% comment%} HTML tag for heading  {% endcomment%}
+    <header>
+        <div class="header-content">
+            <h1>Recipe List</h1>
+            <nav>
+                <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+            </nav>
+        </div>
+    </header>
 
 <table border="1" cellpadding="5" cellspacing = "5">  
 

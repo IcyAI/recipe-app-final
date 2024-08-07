@@ -10,4 +10,4 @@ class user(models.Model):
 
 
     def __str__(self):
-        return ("Username: ", self.username)
+        return "Username: " + self.username
