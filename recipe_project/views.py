@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 
 from django.conf import settings
-# from .forms import LoginForm, SignUpForm
+
 
 #define a function view called login_view that takes a request from user
 def login_view(request):
@@ -46,6 +46,6 @@ def login_view(request):
 #define a function view called logout_view that takes a request from user
 def logout_view(request):                                  
     logout(request)             #the use pre-defined Django function to logout
-    return redirect('login')    #after logging out go to login form (or whichever page you want)
+    return redirect('recipes:home')    #after logging out go to login form (or whichever page you want)
 
 

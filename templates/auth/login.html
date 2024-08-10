@@ -1,4 +1,4 @@
-<h1>Login</h1>          {% comment %} print heading {% endcomment %}
+<!-- <h1>Login</h1>          {% comment %} print heading {% endcomment %}
 
 {% comment %} check for error message {% endcomment %}
 {% if error_message %}
@@ -15,4 +15,32 @@
 
    {% comment %} add button {% endcomment %}
    <button type="submit" >Login</button>
-</form>
+</form> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+
+        {% if error_message %}
+            <div class="error-message">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <form action="" method="POST" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>

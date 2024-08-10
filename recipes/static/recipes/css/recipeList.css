@@ -9,7 +9,7 @@
 /* General styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #402fd4; /* Purple background */
+    background-color: #fff; /* Purple background */
     color: #fff;
     margin: 0;
     padding: 0;
@@ -66,20 +66,23 @@ nav a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #402fd4;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 80px;
+    color:#402fd4;
 }
 
 th, td {
     padding: 15px;
     text-align: center;
+    background-color: #fff;
+    color:#402fd4;
 }
 
 th {
-    background-color: #402fd4;
-    color: #fff;
+    background-color: #fff;
+    color: #402fd4;
     font-weight: bold;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -102,12 +105,12 @@ img {
 /* Link styles */
 .recipe-link {
     text-decoration: none;
-    color: #fff;
+    color: #402fd4;
     font-weight: bold;
 }
 
 .recipe-link:hover {
-    color: #ff6f61;
+    color: #0e0e0f;
     text-decoration: underline;
 }
 

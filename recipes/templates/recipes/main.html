@@ -15,11 +15,12 @@
             <h1>Recipe List</h1>
             <nav>
                 <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+                <a href="{% url 'recipes:sort' %}"> Find Recipes</a>
             </nav>
         </div>
     </header>
 
-<table border="1" cellpadding="5" cellspacing = "5">  
+<table boarder="1" cellpadding="5" cellspacing = "5">  
 
     {% comment%} start of table  {% endcomment%}
 
