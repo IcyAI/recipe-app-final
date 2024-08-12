@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView   #to display lists and details
 from .models import recipe                #to access recipe model
 
@@ -10,31 +10,20 @@ from django.contrib.auth.decorators import (
     login_required,
 )  # to protect function-based views
 
-from .forms import RecipesSearchForm
+from .forms import RecipesSearchForm, AddRecipeForm
 import pandas as pd
 from .utils import get_chart
+from django.contrib import messages
 
 # Create your views here.
 
+#home view
 def home(request):
    return render(request, 'recipes/home.html')
 
-# @login_required
-# #define function-based view - records()
-# def sort(request):
-#    #create an instance of SalesSearchForm that you defined in sales/forms.py
-#    form = RecipesSearchForm(request.POST or None)
-
-#    #pack up data to be sent to template in the context dictionary
-#    context={
-#            'form': form,
-#    }
-
-#    #load the sales/record.html page using the data that you just prepared
-#    return render(request, 'recipes/sort.html', context)
-
-# def sort(request):
-#    return render(request, 'recipes/sort.html')
+#about me view
+def about(request):
+    return render(request,'recipes/about.html')
 
 @login_required  # function-based "protected" view
 def sort(request):
@@ -130,11 +119,40 @@ def sort(request):
     return render(request, "recipes/sort.html", context)
 
 
-# Create your views here.
+# Recipe List view
 class RecipeListView(LoginRequiredMixin, ListView):           #class-based view
    model = recipe                         #specify model
    template_name = 'recipes/main.html'    #specify template 
 
+# Recipe details view
 class RecipeDetailView(LoginRequiredMixin, DetailView):                 #class-based view
    model = recipe                                 #specify model
    template_name = 'recipes/detail.html'          #specify template
+
+# add recipe view
+@login_required  # function-based "protected" view
+def addRecipe(request):
+
+    if request.method == "POST":
+        # create an instance of AddRecipeForm with the submitted data and files
+        add_recipe_form = AddRecipeForm(request.POST, request.FILES)
+
+        # validate form data
+        if add_recipe_form.is_valid():
+            # save form data to database
+            add_recipe_form.save()
+
+            # add a success message to display to user
+            messages.success(request, "Recipe added successfully")
+
+            # redirect user to add_recipe page
+            return redirect("recipes:list")
+    else:
+        # create an empty form instance if request method is not POST
+        add_recipe_form = AddRecipeForm()
+
+    # prepare data to send from view to template
+    context = {"add_recipe_form": add_recipe_form}
+
+    # load page using context information
+    return render(request, "recipes/addRecipe.html", context)

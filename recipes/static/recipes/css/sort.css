@@ -8,6 +8,47 @@ body {
 }
 
 /* Header styling */
+header {
+    background-color: #402fd4;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: left; /* Vertically centers items */
+    justify-content: space-between; /* Distributes space between items */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* nav */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between nav links */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #6259e1;
+}
+
+/* Header styling */
 .search-header, .results-header {
     color: #fff; /* Dark gray color */
 }

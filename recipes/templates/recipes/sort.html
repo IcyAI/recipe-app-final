@@ -3,6 +3,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+    <!-- load static, connect to css -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +13,24 @@
     </head>
 
     <body>
+
+        <header>
+
+                <!-- title and navigation -->
+            <div class="header-content">
+                <h1>Find Recipes</h1>
+    
+                <nav>
+                    <a href ="{%url 'recipes:list' %}"> Recipe List </a>
+                    <a href="{% url 'recipes:sort' %}"> Find Recipes</a>
+                    <a href ="{%url 'recipes:addRecipe' %}"> Add Recipe </a>
+                    <a href ="{%url 'recipes:about' %}"> About Me </a>
+                    <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+                </nav>
+                
+            </div>
+        </header>
+
         {% block content %}
             <h1 class="search-header" style="text-align: center">Search for recipes</h1>
 

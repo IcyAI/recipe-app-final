@@ -1,34 +1,8 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe App</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'recipeDetails.css' %}">
-</head>
-
-<body>
-
-<h2>Details: {{object.name}}</h2>
-
-<b>Name: </b> {{object.name}}  <br>
-
-<b>cookingtime: </b> {{object.cookingTime}} <br>
-
-<b>Ingredients: </b> {{object.ingredients}} <br>
-
-<b>Difficulty: </b> {{object.difficulty}} <br>
-
-
-<img src="{{object.pic.url}}" width="200" height="300" />
-
-</body>
-
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
+
+    <!-- load static, connect to css -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +13,11 @@
 
 <body>
 
+    <!-- details container -->
     <div class="details">
         <h2>Details: {{object.name}}</h2>
 
+        <!-- retrieved information -->
         <p><b>Name:</b> {{object.name}}</p>
         <p><b>Cooking Time:</b> {{object.cookingTime}}</p>
         <p><b>Ingredients:</b> {{object.ingredients}}</p>

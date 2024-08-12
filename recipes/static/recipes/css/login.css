@@ -6,6 +6,7 @@ body {
     background-color: #f0f0f0; /* Light gray background */
 }
 
+/* login containter */
 .login-container {
     width: 100%;
     max-width: 400px;
@@ -17,12 +18,14 @@ body {
     color:#fff;
 }
 
+/* title */
 h1 {
     margin-bottom: 20px;
     color: #fff; /* Dark gray color for the heading */
     text-align: center;
 }
 
+/* error */
 .error-message {
     color: red;
     font-size: 0.9em;
@@ -30,6 +33,7 @@ h1 {
     text-align: center;
 }
 
+/* form */
 .login-form {
     display: flex;
     flex-direction: column;

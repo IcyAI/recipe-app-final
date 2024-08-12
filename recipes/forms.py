@@ -9,6 +9,7 @@ SEARCH_CHOICES = [
 
 
 # define class-based Form imported from Django forms
+# search for recipe Form
 class RecipesSearchForm(forms.Form):
     search_by = forms.ChoiceField(
         choices=SEARCH_CHOICES, required=True, label="Search by"
@@ -25,3 +26,9 @@ class RecipesSearchForm(forms.Form):
         required=False,
         label="Difficulty",
     )
+
+#add recipe form 
+class AddRecipeForm(forms.ModelForm):
+    class Meta:
+        model = recipe
+        fields = ["name", "cookingTime", "ingredients", "pic"]
